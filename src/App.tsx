@@ -71,7 +71,6 @@ function App() {
                   <div className=' flex space-x-2 '>
 
                     <button onClick={() => {
-                      // setAdd(add.reverse())
                       setList([...list, v])
                     }}
                       className=' bg-blue-300 w-12 rounded-lg'>black</button>
