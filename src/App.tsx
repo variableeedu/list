@@ -5,6 +5,7 @@ function App() {
   const [input, setInput] = useState<string>("")
   const [list, setList] = useState<string[]>([])
   const [add, setAdd] = useState<string[]>([])
+  const [index, setIndex] = useState(0)
 
   return (
     <div className=' h-screen w-full pt-10 flex justify-center  '>
@@ -27,8 +28,18 @@ function App() {
           }}
             className='h-10 w-[80px] bg-red-300 rounded-lg text-center pt-1'>Add </button>
         </div>
+        <div className='flex  justify-evenly'>
+
+          <button onClick={() => {
+            setIndex(1)
+          }} className='h-10 w-24 bg-green-400 rounded-lg'>next</button>
+          <button onClick={() => {
+            setIndex(2)
+          }}
+            className='h-10 w-24 bg-green-400 rounded-lg'>back</button>
+        </div>
         <div className="flex gap-3 flex-wrap justify-center">
-          <div className='bg-red-200 p-4'>
+          {/* <div className='bg-red-200 p-4'>
             {list.map((v, i) => {
               return (
                 <div className='h-10 w-[480px] bg-gray-300 flex justify-between px-3 items-center'><span className='  flex justify-between'>
@@ -60,7 +71,8 @@ function App() {
               )
             })}
 
-          </div>
+          </div> */}
+
           <div className='bg-blue-200 p-4'>
             {add.map((v, i) => {
               return (
