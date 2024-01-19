@@ -1,10 +1,10 @@
 import { RxCrossCircled } from "react-icons/rx"
 
-export function Back({ add, list, setList, setAdd }: { add: string[]; list: string[]; setList: (val: string[]) => void; setAdd: (val: string[]) => void }) {
-    return <div className='bg-blue-200 p-4'>
+export function Back({ add, list, setList, setAdd, setIndex }: { add: string[]; list: string[]; setList: (val: string[]) => void; setAdd: (val: string[]) => void; setIndex: (val: boolean) => void }) {
+    return <div className='bg-blue-200 p-4   space-y-3'>
         {add.map((v, i) => {
             return (
-                <div className='h-10 w-[480px] bg-gray-300 flex justify-between px-3 items-center'><span className='  flex justify-between'>
+                <div className='h-10 w-[480px]  bg-gray-300 flex justify-between px-3 items-center'><span className='  flex justify-between'>
 
                     {v}
                 </span>
@@ -12,6 +12,10 @@ export function Back({ add, list, setList, setAdd }: { add: string[]; list: stri
 
                         <button onClick={() => {
                             setList([...list, v])
+                            setAdd(add.filter((_, ind) => {
+                                return ind != i
+                            }))
+                            setIndex(false)
                         }}
                             className=' bg-blue-300 w-12 rounded-lg'>back</button>
 

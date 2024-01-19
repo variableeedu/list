@@ -7,7 +7,7 @@ function App() {
   const [input, setInput] = useState<string>("")
   const [list, setList] = useState<string[]>([])
   const [add, setAdd] = useState<string[]>([])
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState<boolean>(false)
 
   return (
     <div className=' h-screen w-full pt-10 flex justify-center  '>
@@ -33,79 +33,18 @@ function App() {
         <div className='flex  justify-evenly'>
 
           <button onClick={() => {
-            setIndex(1)
+            setIndex(true)
           }} className='h-10 w-24 bg-green-400 rounded-lg'>next</button>
           <button onClick={() => {
-            setIndex(2)
+            setIndex(false)
           }}
             className='h-10 w-24 bg-green-400 rounded-lg'>back</button>
         </div>
         <div className="flex gap-3 flex-wrap justify-center">
-          <Firstlist list={list} add={add} setAdd={(val) => setAdd(val)} setList={(val) => setList(val)} />
-          <Back add={add} list={list} setList={(val) => setList(val)} setAdd={(val) => setAdd(val)} />
-          {/* <div className='bg-red-200 p-4'>
-            {list.map((v, i) => {
-              return (
-                <div className='h-10 w-[480px] bg-gray-300 flex justify-between px-3 items-center'><span className='  flex justify-between'>
+          {!index ?
+            <Firstlist setIndex={(val) => setIndex(val)} list={list} add={add} setAdd={(val) => setAdd(val)} setList={(val) => setList(val)} /> :
+            <Back setIndex={(val) => setIndex(val)} add={add} list={list} setList={(val) => setList(val)} setAdd={(val) => setAdd(val)} />}
 
-                  {v}
-                </span>
-                  <div className=' flex  space-x-2'>
-
-                    <button onClick={() => {
-                      setAdd([...add, v])
-                      setList(list.filter((_, ind) => {
-                        return ind != i
-
-                      }))
-
-                    }}
-                      className=' rounded-lg bg-blue-300 w-12'>shift</button>
-                    <RxCrossCircled onClick={() => {
-                      setList(list.filter((_, ind) => {
-                        return ind != i
-                      }))
-                      // setList(list.splice(i,1))
-                    }} className='bg-blue-300 h-[30px] rounded-lg w-7  h-full' />
-                  </div>
-
-
-
-                </div>
-              )
-            })}
-
-          </div> */}
-
-          {/* <div className='bg-blue-200 p-4'>
-            {add.map((v, i) => {
-              return (
-                <div className='h-10 w-[480px] bg-gray-300 flex justify-between px-3 items-center'><span className='  flex justify-between'>
-
-                  {v}
-                </span>
-                  <div className=' flex space-x-2 '>
-
-                    <button onClick={() => {
-                      setList([...list, v])
-                    }}
-                      className=' bg-blue-300 w-12 rounded-lg'>back</button>
-
-                    <RxCrossCircled onClick={() => {
-                      setAdd(add.filter((_, ind) => {
-                        return ind != i
-                      }))
-                      // setList(list.splice(i,1))
-                    }} className='bg-blue-300 h-8  w-7 rounded-lg  h-full' />
-                  </div>
-
-
-
-                </div>
-              )
-            })}
-
-          </div> */}
         </div>
       </div>
     </div>
