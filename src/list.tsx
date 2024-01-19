@@ -1,6 +1,6 @@
 import { RxCrossCircled } from "react-icons/rx"
 
-export function Firstlist({ list, add, setAdd, setList, setIndex }: { list: string[]; add: string[]; setAdd: (val: string[]) => void; setList: (val: string[]) => void; setIndex: (val: boolean) => void }) {
+export function Firstlist({ list, add, setAdd, setList, }: { list: string[]; add: string[]; setAdd: (val: string[]) => void; setList: (val: string[]) => void }) {
     return <div className='bg-red-200 p-4 space-y-3'>
         {list.map((v, i) => {
             return (
@@ -16,7 +16,6 @@ export function Firstlist({ list, add, setAdd, setList, setIndex }: { list: stri
                                 return ind != i
 
                             }))
-                            setIndex(true)
 
                         }}
                             className=' rounded-lg bg-blue-300 w-12'>shift</button>

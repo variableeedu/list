@@ -7,7 +7,8 @@ function App() {
   const [input, setInput] = useState<string>("")
   const [list, setList] = useState<string[]>([])
   const [add, setAdd] = useState<string[]>([])
-  const [index, setIndex] = useState<boolean>(false)
+  const [index, setIndex] = useState(0)
+
 
   return (
     <div className=' h-screen w-full pt-10 flex justify-center  '>
@@ -33,17 +34,21 @@ function App() {
         <div className='flex  justify-evenly'>
 
           <button onClick={() => {
-            setIndex(true)
-          }} className='h-10 w-24 bg-green-400 rounded-lg'>next</button>
+            setIndex(0)
+          }} className='h-10 w-24 bg-green-400 rounded-lg'>List 1</button>
           <button onClick={() => {
-            setIndex(false)
+            setIndex(1)
           }}
-            className='h-10 w-24 bg-green-400 rounded-lg'>back</button>
+            className='h-10 w-24 bg-green-400 rounded-lg'>List 2</button>
+          <button onClick={() => {
+            setIndex(3)
+          }} className='h-10 w-24 bg-green-400 rounded-lg'>List 3</button>
         </div>
         <div className="flex gap-3 flex-wrap justify-center">
           {!index ?
-            <Firstlist setIndex={(val) => setIndex(val)} list={list} add={add} setAdd={(val) => setAdd(val)} setList={(val) => setList(val)} /> :
-            <Back setIndex={(val) => setIndex(val)} add={add} list={list} setList={(val) => setList(val)} setAdd={(val) => setAdd(val)} />}
+            <Firstlist list={list} add={add} setAdd={(val) => setAdd(val)} setList={(val) => setList(val)} /> :
+            <Back add={add} list={list} setList={(val) => setList(val)} setAdd={(val) => setAdd(val)} />}
+
 
         </div>
       </div>
