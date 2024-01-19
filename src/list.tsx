@@ -1,4 +1,6 @@
-export function Firstlist({ list }: { list: string[] }, { setAdd }: { setAd: string[] }) {
+import { RxCrossCircled } from "react-icons/rx"
+
+export function Firstlist({ list, add, setAdd, setList }: { list: string[]; add: string[]; setAdd: (val: string[]) => void; setList: (val: string[]) => void }) {
     return <div className='bg-red-200 p-4'>
         {list.map((v, i) => {
             return (

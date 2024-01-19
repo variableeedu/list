@@ -1,5 +1,7 @@
 import { useState } from 'react'
-import { RxCrossCircled } from "react-icons/rx";
+import { Firstlist } from './list';
+import { Back } from './assets/shift';
+
 
 function App() {
   const [input, setInput] = useState<string>("")
@@ -39,6 +41,8 @@ function App() {
             className='h-10 w-24 bg-green-400 rounded-lg'>back</button>
         </div>
         <div className="flex gap-3 flex-wrap justify-center">
+          <Firstlist list={list} add={add} setAdd={(val) => setAdd(val)} setList={(val) => setList(val)} />
+          <Back add={add} list={list} setList={(val) => setList(val)} setAdd={(val) => setAdd(val)} />
           {/* <div className='bg-red-200 p-4'>
             {list.map((v, i) => {
               return (
@@ -73,7 +77,7 @@ function App() {
 
           </div> */}
 
-          <div className='bg-blue-200 p-4'>
+          {/* <div className='bg-blue-200 p-4'>
             {add.map((v, i) => {
               return (
                 <div className='h-10 w-[480px] bg-gray-300 flex justify-between px-3 items-center'><span className='  flex justify-between'>
@@ -85,7 +89,7 @@ function App() {
                     <button onClick={() => {
                       setList([...list, v])
                     }}
-                      className=' bg-blue-300 w-12 rounded-lg'>black</button>
+                      className=' bg-blue-300 w-12 rounded-lg'>back</button>
 
                     <RxCrossCircled onClick={() => {
                       setAdd(add.filter((_, ind) => {
@@ -101,7 +105,7 @@ function App() {
               )
             })}
 
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
