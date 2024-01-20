@@ -22,6 +22,9 @@ export function Firstlist({ list, add, setAdd, setList, fav, setFav }: { list: s
                             className=' rounded-lg bg-blue-300 w-12'>shift</button>
                         <FaRegStar onClick={() => {
                             setFav([...fav, v])
+                            setList(list.filter((_, ind) => {
+                                return ind != i
+                            }))
                         }} className=" bg-blue-300 h-[28px] rounded-lg w-6" />
 
                         <RxCrossCircled onClick={() => {

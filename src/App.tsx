@@ -36,10 +36,10 @@ function App() {
         <div className='flex  justify-evenly'>
 
           <button onClick={() => {
-            setIndex(0)
+            setIndex(1)
           }} className='h-10 w-24 bg-green-400 rounded-lg'>List 1</button>
           <button onClick={() => {
-            setIndex(1)
+            setIndex(2)
           }}
             className='h-10 w-24 bg-green-400 rounded-lg'>List 2</button>
           <button onClick={() => {
@@ -47,10 +47,13 @@ function App() {
           }} className='h-10 w-24 bg-green-400 rounded-lg'>List 3</button>
         </div>
         <div className="flex gap-3 flex-wrap justify-center">
-          {!index ?
-            <Firstlist list={list} add={add} fav={fav} setFav={(val) => setFav(val)} setAdd={(val) => setAdd(val)} setList={(val) => setList(val)} /> :
-            <Back add={add} list={list} setList={(val) => setList(val)} setAdd={(val) => setAdd(val)} />}:
-          <Favlist fav={fav} setFav={(val) => setFav(val)} />
+          {index === 1 ?
+            <Firstlist list={list} add={add} fav={fav} setFav={(val) => setFav(val)} setAdd={(val) => setAdd(val)} setList={(val) => setList(val)} />
+            : index === 2 ?
+              <Back add={add} list={list} setList={(val) => setList(val)} setAdd={(val) => setAdd(val)} />
+              : index === 3 ?
+                <Favlist fav={fav} setFav={(val) => setFav(val)} />
+                : "not selected"}
 
         </div>
       </div>
