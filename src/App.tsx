@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Firstlist } from './list';
-import { Back } from './assets/shift';
+import { Back } from './shift';
 import { Favlist } from './Favlist';
 
 
