@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { Firstlist } from './list';
 import { Back } from './assets/shift';
+import { Favlist } from './Favlist';
 
 
 function App() {
   const [input, setInput] = useState<string>("")
   const [list, setList] = useState<string[]>([])
   const [add, setAdd] = useState<string[]>([])
+  const [fav, setFav] = useState<string[]>([])
   const [index, setIndex] = useState(0)
 
 
@@ -46,9 +48,9 @@ function App() {
         </div>
         <div className="flex gap-3 flex-wrap justify-center">
           {!index ?
-            <Firstlist list={list} add={add} setAdd={(val) => setAdd(val)} setList={(val) => setList(val)} /> :
-            <Back add={add} list={list} setList={(val) => setList(val)} setAdd={(val) => setAdd(val)} />}
-
+            <Firstlist list={list} add={add} fav={fav} setFav={(val) => setFav(val)} setAdd={(val) => setAdd(val)} setList={(val) => setList(val)} /> :
+            <Back add={add} list={list} setList={(val) => setList(val)} setAdd={(val) => setAdd(val)} />}:
+          <Favlist fav={fav} setFav={(val) => setFav(val)} />
 
         </div>
       </div>

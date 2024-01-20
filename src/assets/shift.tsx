@@ -1,7 +1,7 @@
 import { RxCrossCircled } from "react-icons/rx"
 
 export function Back({ add, list, setList, setAdd, }: { add: string[]; list: string[]; setList: (val: string[]) => void; setAdd: (val: string[]) => void }) {
-    return <div className='bg-blue-200 p-4   space-y-3'>
+    return <div className='bg-blue-300 p-4   space-y-3'>
         {add.map((v, i) => {
             return (
                 <div className='h-10 w-[480px]  bg-gray-300 flex justify-between px-3 items-center'><span className='  flex justify-between'>
