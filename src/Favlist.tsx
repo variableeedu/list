@@ -10,21 +10,6 @@ export function Favlist({ fav, setFav }: { fav: string[]; setFav: (val: string[]
 
                         {v}
                     </span>
-                        {/* <div className=' flex space-x-2 '> */}
-
-                        {/* <button onClick={() => {
-                                setList([...list, v])
-                               
-                            }}
-                                className=' bg-blue-300 w-12 rounded-lg'>back</button> */}
-
-                        {/* <RxCrossCircled onClick={() => {
-                                setAdd(add.filter((_, ind) => {
-                                    return ind != i
-                                }))
-                                // setList(list.splice(i,1))
-                            }} className='bg-blue-300 h-8  w-7 rounded-lg  h-full' /> */}
-                        {/* </div> */}
 
 
 
